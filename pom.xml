@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.binarybazaar.wallet</groupId>
+    <groupId>org.flinkcoin.wallet</groupId>
     <artifactId>parent</artifactId>
     <version>0.0.0</version>
     <packaging>pom</packaging>
@@ -34,9 +34,9 @@
     </properties>
 
     <scm>
-        <url>https://github.com/binarybazaar/privateagent</url>
-        <connection>scm:git:git://github.com/binarybazaar/privateagent.git</connection>
-        <developerConnection>scm:git:ssh://git@github.com/binarybazaar/privateagent.git</developerConnection>
+        <url>https://github.com/flinkcoin/wallet-demo</url>
+        <connection>scm:git:git://github.com/git@github.com:flinkcoin/wallet-demo.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/flinkcoin/wallet-demo.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
 

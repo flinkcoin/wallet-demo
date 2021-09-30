@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.binarybazaar.wallet</groupId>
+        <groupId>org.flinkcoin.wallet</groupId>
         <artifactId>parent</artifactId>
         <version>0.0.0</version>
     </parent>

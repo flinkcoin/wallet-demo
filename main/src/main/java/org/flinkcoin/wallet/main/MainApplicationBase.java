@@ -44,7 +44,7 @@ public abstract class MainApplicationBase extends AbstractBinder {
     protected static ScanResult scanApp() {
         return new ClassGraph()
                 .enableAllInfo() // Scan classes, methods, fields, annotations
-                .whitelistPackages("com.binarybazaar.wallet") // Scan com.xyz and subpackages (omit to scan all packages)
+                .whitelistPackages("org.flinkcoin.wallet") // Scan com.xyz and subpackages (omit to scan all packages)
                 .scan();
     }
 

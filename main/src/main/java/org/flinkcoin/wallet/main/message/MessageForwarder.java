@@ -21,9 +21,9 @@ package org.flinkcoin.wallet.main.message;
  */
 
 import org.flinkcoin.wallet.main.message.MessageDtl.InfoResponse;
-import com.flick.data.proto.api.Api.InfoReq;
-import com.flick.helper.JsonObjectMapper;
-import com.flick.helper.helpers.Base32Helper;
+import org.flinkcoin.data.proto.api.Api.InfoReq;
+import org.flinkcoin.helper.JsonObjectMapper;
+import org.flinkcoin.helper.helpers.Base32Helper;
 import javax.inject.Inject;
 import javax.ws.rs.core.Feature;
 import javax.ws.rs.core.FeatureContext;

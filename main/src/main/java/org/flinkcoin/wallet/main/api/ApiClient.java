@@ -21,8 +21,8 @@ package org.flinkcoin.wallet.main.api;
  */
 
 import org.flinkcoin.wallet.main.configuration.Config;
-import com.flick.data.proto.api.AccountServiceGrpc;
-import com.flick.data.proto.api.AccountServiceGrpc.AccountServiceBlockingStub;
+import org.flinkcoin.data.proto.api.AccountServiceGrpc;
+import org.flinkcoin.data.proto.api.AccountServiceGrpc.AccountServiceBlockingStub;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import java.util.concurrent.TimeUnit;

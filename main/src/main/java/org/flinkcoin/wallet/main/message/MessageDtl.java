@@ -20,9 +20,9 @@ package org.flinkcoin.wallet.main.message;
  * #L%
  */
 
-import com.flick.data.proto.api.Api.InfoRes;
-import com.flick.data.proto.api.Api.InfoRes.InfoType;
-import com.flick.helper.helpers.Base32Helper;
+import org.flinkcoin.data.proto.api.Api.InfoRes;
+import org.flinkcoin.data.proto.api.Api.InfoRes.InfoType;
+import org.flinkcoin.helper.helpers.Base32Helper;
 
 public class MessageDtl {
 

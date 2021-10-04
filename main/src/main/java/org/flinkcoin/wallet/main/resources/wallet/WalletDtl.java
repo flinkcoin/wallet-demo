@@ -20,9 +20,9 @@ package org.flinkcoin.wallet.main.resources.wallet;
  * #L%
  */
 
-import com.flick.data.proto.common.Common.Block;
-import com.flick.data.proto.common.Common.Block.BlockType;
-import com.flick.helper.helpers.Base32Helper;
+import org.flinkcoin.data.proto.common.Common.Block;
+import org.flinkcoin.data.proto.common.Common.Block.BlockType;
+import org.flinkcoin.helper.helpers.Base32Helper;
 
 public class WalletDtl {
 

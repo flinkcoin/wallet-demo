@@ -21,17 +21,17 @@ package org.flinkcoin.wallet.main.resources;
  */
 
 import org.flinkcoin.wallet.main.api.ApiClient;
-import com.flick.crypto.CryptoException;
-import com.flick.crypto.HashHelper;
-import com.flick.crypto.KeyGenerator;
-import com.flick.crypto.KeyPair;
-import com.flick.data.proto.api.AccountServiceGrpc;
-import com.flick.data.proto.api.Api;
-import com.flick.data.proto.common.Common.Block;
-import com.flick.helper.helpers.Base32Helper;
-import com.flick.helper.helpers.DateHelper;
-import com.flick.helper.helpers.RandomHelper;
-import com.flick.helper.helpers.UUIDHelper;
+import org.flinkcoin.crypto.CryptoException;
+import org.flinkcoin.crypto.HashHelper;
+import org.flinkcoin.crypto.KeyGenerator;
+import org.flinkcoin.crypto.KeyPair;
+import org.flinkcoin.data.proto.api.AccountServiceGrpc;
+import org.flinkcoin.data.proto.api.Api;
+import org.flinkcoin.data.proto.common.Common.Block;
+import org.flinkcoin.helper.helpers.Base32Helper;
+import org.flinkcoin.helper.helpers.DateHelper;
+import org.flinkcoin.helper.helpers.RandomHelper;
+import org.flinkcoin.helper.helpers.UUIDHelper;
 import com.google.protobuf.ByteString;
 import java.security.InvalidKeyException;
 import java.security.MessageDigest;

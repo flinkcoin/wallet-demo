@@ -24,12 +24,12 @@ import org.flinkcoin.wallet.main.api.ApiClient;
 import org.flinkcoin.wallet.main.resources.ResourceBase;
 import org.flinkcoin.wallet.main.resources.wallet.WalletDtl.WalletPaymentRequest;
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.flick.crypto.CryptoException;
-import com.flick.data.proto.api.AccountServiceGrpc;
-import com.flick.data.proto.api.Api;
-import com.flick.data.proto.api.Api.TransactionReq;
-import com.flick.data.proto.common.Common.Block;
-import com.flick.helper.helpers.Base32Helper;
+import org.flinkcoin.crypto.CryptoException;
+import org.flinkcoin.data.proto.api.AccountServiceGrpc;
+import org.flinkcoin.data.proto.api.Api;
+import org.flinkcoin.data.proto.api.Api.TransactionReq;
+import org.flinkcoin.data.proto.common.Common.Block;
+import org.flinkcoin.helper.helpers.Base32Helper;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.InvalidProtocolBufferException;
 import java.security.InvalidKeyException;
@@ -49,8 +49,8 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
 import org.flinkcoin.wallet.main.resources.wallet.WalletDtl.WalletTransaction;
-import com.flick.data.proto.api.Api.PaymentTransactionReq;
-import com.flick.data.proto.common.Common.PaymentRequest;
+import org.flinkcoin.data.proto.api.Api.PaymentTransactionReq;
+import org.flinkcoin.data.proto.common.Common.PaymentRequest;
 
 @Path("wallet")
 public class WalletResource extends ResourceBase {

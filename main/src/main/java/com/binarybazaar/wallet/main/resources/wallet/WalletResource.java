@@ -171,4 +171,26 @@ public class WalletResource extends ResourceBase {
 
         return Response.ok(paymentRequestRes.getSuccess()).build();
     }
+
+
+    @GET
+    @Path("nftquery/{nftCode}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response queryNft(@PathParam("nftCode") String nftCode) throws SignatureException, InvalidKeyException, CryptoException, NoSuchAlgorithmException, JsonProcessingException {
+
+        AccountServiceGrpc.AccountServiceBlockingStub accountServiceStub = apiClient.getAccountServiceStub();
+
+        byte[] decode = Base32Helper.decode(nftCode);
+
+        Api.GetBlockReq blockReq = Api.GetBlockReq.newBuilder()
+                .setBlockHash(ByteString.copyFrom(decode))
+                .build();
+
+        Api.GetBlockRes block = accountServiceStub.getBlock(blockReq);
+
+        WalletDtl.WalletBlock walletBlock = new WalletDtl.WalletBlock(block.getBlock());
+
+        return Response.ok(walletBlock).build();
+    }
+
 }

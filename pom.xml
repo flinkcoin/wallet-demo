@@ -1,12 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright © 2021 Flink Foundation (info@flinkcoin.org)
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.binarybazaar.wallet</groupId>
+    <groupId>org.flinkcoin.wallet</groupId>
     <artifactId>parent</artifactId>
     <version>0.0.0</version>
     <packaging>pom</packaging>
-    
+
     <name>Wallet</name>
 
     <modules>
@@ -34,9 +51,9 @@
     </properties>
 
     <scm>
-        <url>https://github.com/binarybazaar/privateagent</url>
-        <connection>scm:git:git://github.com/binarybazaar/privateagent.git</connection>
-        <developerConnection>scm:git:ssh://git@github.com/binarybazaar/privateagent.git</developerConnection>
+        <url>https://github.com/flinkcoin/wallet-demo</url>
+        <connection>scm:git:git://github.com/git@github.com:flinkcoin/wallet-demo.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/flinkcoin/wallet-demo.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
 
@@ -72,6 +89,36 @@
                     <showWarnings>true</showWarnings>
                     <showDeprecation>true</showDeprecation>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>com.mycila</groupId>
+                <artifactId>license-maven-plugin</artifactId>
+                <version>4.1</version>                
+                <executions>
+                    <execution>
+                        <id>format</id>
+                        <goals>
+                            <goal>format</goal>
+                        </goals>
+                        <phase>process-sources</phase>
+                        <configuration>                    
+                            <properties>
+                                <year>2021</year>
+                                <owner>Flink Foundation</owner>
+                                <email>info@flinkcoin.org</email>
+                            </properties>
+                            <licenseSets>
+                                <licenseSet>
+                                    <header>com/mycila/maven/plugin/license/templates/APACHE-2.txt</header>
+                                    <excludes>                         
+                                        <exclude>src/test/resources/**</exclude>
+                                        <exclude>src/main/resources/**</exclude>
+                                    </excludes>
+                                </licenseSet>
+                            </licenseSets>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
 

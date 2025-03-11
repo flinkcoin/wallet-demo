@@ -5,11 +5,12 @@ import com.flick.data.proto.api.AccountServiceGrpc;
 import com.flick.data.proto.api.AccountServiceGrpc.AccountServiceBlockingStub;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
-import java.util.concurrent.TimeUnit;
-import javax.inject.Inject;
-import javax.inject.Singleton;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import javax.inject.Inject;
+import javax.inject.Singleton;
+import java.util.concurrent.TimeUnit;
 
 @Singleton
 public class ApiClient implements AutoCloseable {

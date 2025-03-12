@@ -197,15 +197,15 @@ public class WalletResource extends ResourceBase {
 
         byte[] decode = Base32Helper.decode(nftCode);
 
-        Api.GetBlockReq blockReq = Api.GetBlockReq.newBuilder()
-                .setBlockHash(ByteString.copyFrom(decode))
+        Api.QueryReq blockReq = Api.QueryReq.newBuilder()
+                .setNftCode(ByteString.copyFrom(decode))
                 .build();
 
-        Api.GetBlockRes block = accountServiceStub.getBlock(blockReq);
+        Api.QueryRes queryRes = accountServiceStub.queryNft(blockReq);
 
-        WalletDtl.WalletBlock walletBlock = new WalletDtl.WalletBlock(block.getBlock());
+        WalletDtl.NFtMatch match=new WalletDtl.NFtMatch(queryRes);
 
-        return Response.ok(walletBlock).build();
+        return Response.ok(match).build();
     }
 
 }

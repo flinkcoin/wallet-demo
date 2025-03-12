@@ -15,6 +15,7 @@
  */
 package org.flinkcoin.wallet.main.resources.wallet;
 
+import org.flinkcoin.data.proto.api.Api.QueryRes;
 import org.flinkcoin.data.proto.common.Common.Block;
 import org.flinkcoin.data.proto.common.Common.Block.BlockType;
 import org.flinkcoin.helper.helpers.Base32Helper;
@@ -59,5 +60,17 @@ public class WalletDtl {
     public static class WalletPaymentRequest {
 
         public String encodedPaymentRequest;
+    }
+
+    public static class NFtMatch {
+        public String accountId;
+        public String accountCode;
+        public boolean exists;
+
+        public NFtMatch(QueryRes queryRes) {
+            this.accountId = Base32Helper.encode(queryRes.getAccountId().toByteArray());
+            this.accountCode = Base32Helper.encode(queryRes.getAccountCode().toByteArray());
+            this.exists = queryRes.getExists();
+        }
     }
 }

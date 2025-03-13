@@ -49,7 +49,7 @@ public class WalletDtl {
             this.sendAccountId = Base32Helper.encode(block.getBody().getSendAccountId().toByteArray());
             this.referenceCode = block.getBody().getReferenceCode().toStringUtf8();
             this.accountCode = block.getBody().getAccountCode().toStringUtf8();
-            this.nftCode = block.getBody().getNftCode().toStringUtf8();
+            this.nftCode = Base32Helper.encode(block.getBody().getNftCode().toByteArray());
             this.receiveBlockHash = Base32Helper.encode(block.getBody().getReceiveBlockHash().toByteArray());
 
         }

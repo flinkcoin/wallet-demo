@@ -208,4 +208,29 @@ public class WalletResource extends ResourceBase {
         return Response.ok(match).build();
     }
 
+    @POST
+    @Path("vote-request")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response voteNFt(WalletDtl.NftVoteRequest t) throws InvalidProtocolBufferException {
+        AccountServiceGrpc.AccountServiceBlockingStub accountServiceStub = apiClient.getAccountServiceStub();
+
+        byte[] decode = Base32Helper.decode(t.nftCode);
+
+        Api.VoteReq blockReq1 = Api.VoteReq.newBuilder()
+                .setNftCode(ByteString.copyFrom(decode))
+                .setReal(t.real)
+                .build();
+
+        Api.VoteRes voteRes = accountServiceStub.voteNft(blockReq1);
+
+        Api.QueryReq blockReq2 = Api.QueryReq.newBuilder()
+                .setNftCode(ByteString.copyFrom(decode))
+                .build();
+
+        Api.QueryRes queryRes = accountServiceStub.queryNft(blockReq2);
+
+        return Response.ok(new WalletDtl.NftVoteResponse(queryRes.getNftVoteFake(),queryRes.getNftVoteReal())).build();
+    }
+
 }

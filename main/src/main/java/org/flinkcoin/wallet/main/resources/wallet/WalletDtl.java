@@ -66,15 +66,37 @@ public class WalletDtl {
         public String encodedPaymentRequest;
     }
 
+    public static class NftVoteRequest {
+        public String nftCode;
+        public boolean real;
+    }
+
+
+    public static class NftVoteResponse {
+        public int nftVoteFake;
+        public int nftVoteReal;
+
+        public NftVoteResponse(int nftVoteFake, int nftVoteReal) {
+            this.nftVoteFake = nftVoteFake;
+            this.nftVoteReal = nftVoteReal;
+        }
+    }
+
     public static class NFtMatch {
         public String accountId;
         public String accountCode;
         public boolean exists;
+        public int nftVoteFake;
+        public int nftVoteReal;
+        public boolean nftVoteSpotter;
 
         public NFtMatch(QueryRes queryRes) {
             this.accountId = Base32Helper.encode(queryRes.getAccountId().toByteArray());
-            this.accountCode = Base32Helper.encode(queryRes.getAccountCode().toByteArray());
+            this.accountCode = queryRes.getAccountCode().toStringUtf8();
             this.exists = queryRes.getExists();
+            this.nftVoteFake = queryRes.getNftVoteFake();
+            this.nftVoteReal = queryRes.getNftVoteReal();
+            this.nftVoteSpotter= queryRes.getSpotterVoteReal();
         }
     }
 }

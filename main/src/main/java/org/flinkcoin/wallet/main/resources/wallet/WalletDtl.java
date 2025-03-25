@@ -36,6 +36,7 @@ public class WalletDtl {
         public String referenceCode;
         public String accountCode;
         public String nftCode;
+        public boolean spotterVoteReal;
 
         public WalletBlock(Block block) {
             this.accountId = Base32Helper.encode(block.getBody().getAccountId().toByteArray());
@@ -51,6 +52,7 @@ public class WalletDtl {
             this.accountCode = block.getBody().getAccountCode().toStringUtf8();
             this.nftCode = Base32Helper.encode(block.getBody().getNftCode().toByteArray());
             this.receiveBlockHash = Base32Helper.encode(block.getBody().getReceiveBlockHash().toByteArray());
+            this.spotterVoteReal = block.getBody().getSpotterVoteReal();
 
         }
 
